@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Jazz | 微醺音樂吧</title>
+    <style>
+        :root {
+            --bg-color: #0b090a;
+            --neon-gold: #f4a261;
+            --neon-blue: #48cae4;
+        }
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 0%, #311b1b 0%, var(--bg-color) 60%);
+            color: #fff; font-family: 'Helvetica Neue', sans-serif;
+            margin: 0; min-height: 100vh; padding: 20px;
+        }
+        .bar-container { max-width: 1000px; margin: 0 auto; }
+        header { padding: 40px 0; text-align: center; }
+        h1 {
+            font-size: 3em; font-weight: 300; margin: 0;
+            color: #fff;
+            text-shadow: 0 0 10px var(--neon-gold), 0 0 20px var(--neon-gold);
+            font-family: 'Brush Script MT', cursive;
+        }
+        .nav-search {
+            display: flex; justify-content: center; gap: 15px; margin-bottom: 50px;
+        }
+        input {
+            width: 300px; padding: 12px 20px; border-radius: 25px;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);
+            color: white; backdrop-filter: blur(5px); outline: none; transition: 0.3s;
+        }
+        input:focus { border-color: var(--neon-blue); box-shadow: 0 0 15px rgba(72,202,228,0.5); }
+        .glass-btn {
+            background: rgba(244, 162, 97, 0.2); border: 1px solid var(--neon-gold);
+            color: var(--neon-gold); border-radius: 25px; padding: 0 20px;
+            cursor: pointer; transition: 0.3s;
+        }
+        .glass-btn:hover { background: var(--neon-gold); color: #000; box-shadow: 0 0 15px var(--neon-gold); }
+        .vinyl-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;
+        }
+        .vinyl-card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 15px; padding: 20px; backdrop-filter: blur(10px);
+            transition: transform 0.4s ease;
+        }
+        .vinyl-card:hover { transform: translateY(-10px); }
+        .cover { height: 150px; background: linear-gradient(135deg, #2b2b2b, #111); border-radius: 10px; margin-bottom: 15px; display:flex; align-items:center; justify-content:center;}
+        .cover::after { content: '◎'; font-size: 40px; color: #444; } /* 假裝黑膠唱片 */
+        h3 { margin: 0 0 5px 0; color: var(--neon-blue); font-weight: 400; }
+        p { margin: 0; color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="bar-container">
+        <header>
+            <h1>The Midnight Records</h1>
+            <p style="color: #aaa; letter-spacing: 2px;">DRINKS • JAZZ • DATABASES</p>
+        </header>
+        <div class="nav-search">
+            <input type="text" placeholder="Search for artists, moods, or vinyls...">
+            <button class="glass-btn">Play</button>
+        </div>
+        <div class="vinyl-grid">
+            <div class="vinyl-card">
+                <div class="cover"></div>
+                <h3>Kind of Blue</h3>
+                <p>Miles Davis • 1959</p>
+            </div>
+            <div class="vinyl-card">
+                <div class="cover"></div>
+                <h3>Midnight City</h3>
+                <p>Synthwave Vibes • 2011</p>
+            </div>
+            <div class="vinyl-card">
+                <div class="cover"></div>
+                <h3>Lofi Study Sessions</h3>
+                <p>Various Artists • Ongoing</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
