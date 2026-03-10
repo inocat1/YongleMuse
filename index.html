@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midnight Jazz | 微醺音樂吧</title>
+    <title>Midnight Jazz | 你的音樂知識庫</title>
     <style>
         :root {
             --bg-color: #0b090a;
@@ -37,10 +37,13 @@
         }
         .glass-btn:hover { background: var(--neon-gold); color: #000; box-shadow: 0 0 15px var(--neon-gold); }
         .vinyl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        
+        /* 卡片與連結的設定 */
+        a.card-link { text-decoration: none; color: inherit; display: block; }
         .vinyl-card {
             background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.05);
             border-radius: 15px; padding: 20px; backdrop-filter: blur(10px);
-            transition: transform 0.4s ease; cursor: pointer;
+            transition: transform 0.4s ease; cursor: pointer; height: 100%; box-sizing: border-box;
         }
         .vinyl-card:hover { transform: translateY(-10px); border-color: var(--neon-gold); }
         .cover {
@@ -49,7 +52,7 @@
             position: relative; overflow: hidden;
         }
         .cover::before {
-            content: '▶ PLAY'; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            content: '▶ READ'; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(0,0,0,0.6); color: white; display: flex;
             align-items: center; justify-content: center; font-weight: bold;
             opacity: 0; transition: 0.3s; letter-spacing: 2px;
@@ -62,33 +65,45 @@
 <body>
     <div class="bar-container">
         <header>
-            <h1>The Midnight Records</h1>
-            <p style="color: #aaa; letter-spacing: 2px;">DRINKS • JAZZ • DATABASES</p>
+            <h1>The Audio Archives</h1>
+            <p style="color: #aaa; letter-spacing: 2px;">MUSIC • KNOWLEDGE • DATABASES</p>
         </header>
+        
         <div class="nav-search">
-            <input type="text" placeholder="搜尋歌手、專輯或曲風...">
+            <input type="text" placeholder="搜尋文章、教學或關鍵字...">
             <button class="glass-btn">Search</button>
         </div>
+
         <div class="vinyl-grid">
-            <!-- 卡片 1 -->
-            <div class="vinyl-card">
-                <!-- 這裡的圖片網址未來可以換成你自己的 -->
-                <div class="cover" style="background-image: url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=500&q=80');"></div>
-                <h3>Kind of Blue</h3>
-                <p>Miles Davis • 1959</p>
-            </div>
-            <!-- 卡片 2 -->
-            <div class="vinyl-card">
-                <div class="cover" style="background-image: url('https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&q=80');"></div>
-                <h3>Midnight City</h3>
-                <p>Synthwave Vibes • 2011</p>
-            </div>
+            
+            <!-- 卡片 1：點擊這張卡片會跳轉到 sample-rate.html -->
+            <a href="sample-rate.html" class="card-link">
+                <div class="vinyl-card">
+                    <!-- 封面圖：你可以把 url 裡面的網址換成你自己的圖片 -->
+                    <div class="cover" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&q=80');"></div>
+                    <h3>什麼是 Sample Rate？</h3>
+                    <p>數位音訊基礎 • 基礎必背</p>
+                </div>
+            </a>
+
+            <!-- 卡片 2：目前是裝飾用，未來你可以照著卡片1的格式新增文章 -->
+            <a href="#" class="card-link">
+                <div class="vinyl-card">
+                    <div class="cover" style="background-image: url('https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&q=80');"></div>
+                    <h3>什麼是 Bit Depth？</h3>
+                    <p>動態範圍與雜訊 • 即將推出</p>
+                </div>
+            </a>
+
             <!-- 卡片 3 -->
-            <div class="vinyl-card">
-                <div class="cover" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&q=80');"></div>
-                <h3>Lofi Study Sessions</h3>
-                <p>Various Artists • Ongoing</p>
-            </div>
+            <a href="#" class="card-link">
+                <div class="vinyl-card">
+                    <div class="cover" style="background-image: url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=500&q=80');"></div>
+                    <h3>好用的免費外掛整理</h3>
+                    <p>Tools & Plugins • 即將推出</p>
+                </div>
+            </a>
+
         </div>
     </div>
 </body>
