@@ -24,165 +24,87 @@
         }
 
         /* 導覽列：返回按鈕 */
-        nav {
-            position: absolute;
-            top: 30px;
-            left: 5vw;
-            z-index: 10;
-        }
+        nav { position: absolute; top: 30px; left: 5vw; z-index: 10; }
         .back-btn {
-            color: var(--neon-gold);
-            text-decoration: none;
-            font-size: 1.1em;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--neon-gold); text-decoration: none; font-size: 1.1em;
+            letter-spacing: 2px; transition: 0.3s; display: flex; align-items: center; gap: 10px;
         }
-        .back-btn:hover {
-            color: #fff;
-            text-shadow: 0 0 10px var(--neon-gold);
-            transform: translateX(-5px);
-        }
+        .back-btn:hover { color: #fff; text-shadow: 0 0 10px var(--neon-gold); transform: translateX(-5px); }
 
         /* 頂部主視覺 (Hero Image) */
         .hero {
-            height: 55vh;
-            min-height: 400px;
-            background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1600&q=80'); /* 這裡可以換成你的封面圖 */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
+            height: 55vh; min-height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1600&q=80');
+            background-size: cover; background-position: center;
+            position: relative; display: flex; align-items: flex-end; justify-content: center;
         }
-        /* 漸層遮罩，讓圖片自然融入背景 */
         .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0; height: 100%;
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 100%;
             background: linear-gradient(to top, var(--bg-color) 5%, transparent 80%);
         }
 
         /* 文章容器 */
         .article-container {
-            max-width: 760px; /* 閱讀最舒適的寬度 */
-            margin: 0 auto;
-            padding: 0 20px 80px 20px;
-            position: relative;
-            z-index: 2;
+            max-width: 760px; margin: 0 auto; padding: 0 20px 80px 20px;
+            position: relative; z-index: 2;
         }
 
         /* 文章標題區 */
-        .post-header {
-            text-align: center;
-            margin-top: -60px; /* 往上浮動蓋住一點圖片 */
-            margin-bottom: 50px;
-        }
-        .tags {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+        .post-header { text-align: center; margin-top: -60px; margin-bottom: 50px; }
+        .tags { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
         .tag {
-            background: rgba(72, 202, 228, 0.1);
-            color: var(--neon-blue);
-            border: 1px solid var(--neon-blue);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            letter-spacing: 1px;
+            background: rgba(72, 202, 228, 0.1); color: var(--neon-blue);
+            border: 1px solid var(--neon-blue); padding: 5px 15px;
+            border-radius: 20px; font-size: 0.85em; letter-spacing: 1px;
         }
-        h1 {
-            font-size: 2.8em;
-            margin: 0 0 15px 0;
-            color: #fff;
-            line-height: 1.3;
-            text-shadow: 0 0 15px rgba(244, 162, 97, 0.4);
-        }
-        .meta {
-            color: #777;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-        }
+        h1 { font-size: 2.8em; margin: 0 0 15px 0; color: #fff; line-height: 1.3; text-shadow: 0 0 15px rgba(244, 162, 97, 0.4); }
+        .meta { color: #777; font-size: 0.9em; letter-spacing: 1px; }
 
         /* 文章內文區 */
-        .post-content {
-            font-size: 1.15em;
-            line-height: 1.8;
-            color: var(--text-gray);
-        }
-        
-        /* 段落與標題設計 */
-        .post-content p {
-            margin-bottom: 1.5em;
-        }
+        .post-content { font-size: 1.15em; line-height: 1.8; color: var(--text-gray); }
+        .post-content p { margin-bottom: 1.5em; }
         .post-content h2 {
-            color: var(--neon-gold);
-            font-size: 1.6em;
-            margin-top: 2em;
-            margin-bottom: 1em;
-            border-bottom: 1px dashed rgba(244, 162, 97, 0.3);
-            padding-bottom: 10px;
+            color: var(--neon-gold); font-size: 1.6em; margin-top: 2em; margin-bottom: 1em;
+            border-bottom: 1px dashed rgba(244, 162, 97, 0.3); padding-bottom: 10px;
         }
-        .post-content h3 {
-            color: var(--neon-blue);
-            font-size: 1.3em;
-            margin-top: 1.5em;
-        }
+        .post-content h3 { color: var(--neon-blue); font-size: 1.3em; margin-top: 1.5em; }
 
-        /* 引用/重點框 (Blockquote) */
         blockquote {
-            background: var(--surface);
-            border-left: 4px solid var(--neon-gold);
-            margin: 2em 0;
-            padding: 20px 30px;
-            border-radius: 0 10px 10px 0;
-            backdrop-filter: blur(10px);
-            font-style: italic;
-            box-shadow: inset 5px 0 15px rgba(244, 162, 97, 0.05);
+            background: var(--surface); border-left: 4px solid var(--neon-gold);
+            margin: 2em 0; padding: 20px 30px; border-radius: 0 10px 10px 0;
+            backdrop-filter: blur(10px); font-style: italic; box-shadow: inset 5px 0 15px rgba(244, 162, 97, 0.05);
         }
         blockquote p { margin: 0; color: #fff; }
 
-        /* 專有名詞高亮 */
-        .hl { 
-            color: var(--neon-gold); 
-            font-weight: bold; 
-        }
-        .hl-blue { 
-            color: var(--neon-blue); 
-            font-weight: bold; 
-        }
-        .marker {
-            background: rgba(244, 162, 97, 0.15);
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
+        .hl { color: var(--neon-gold); font-weight: bold; }
+        .hl-blue { color: var(--neon-blue); font-weight: bold; }
+        .marker { background: rgba(244, 162, 97, 0.15); padding: 2px 6px; border-radius: 4px; }
 
-        /* 圖片排版 */
+        /* 圖片與影片排版 */
         .post-image {
-            width: 100%;
-            border-radius: 12px;
-            margin: 2em 0;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%; border-radius: 12px; margin: 2em 0 0.5em 0;
+            border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .image-caption {
-            text-align: center;
-            color: #666;
-            font-size: 0.85em;
-            margin-top: -1em;
-            margin-bottom: 2em;
+        .image-caption { text-align: center; color: #666; font-size: 0.85em; margin-bottom: 2em; }
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+            max-width: 100%; border-radius: 12px; margin: 2em 0; border: 1px solid rgba(255,255,255,0.1);
         }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* 好和弦風格的工具/下載按鈕 */
+        .action-btn {
+            display: inline-block; background: var(--neon-blue); color: #000;
+            padding: 12px 25px; border-radius: 30px; text-decoration: none;
+            font-weight: bold; margin: 1em 0; transition: 0.3s; box-shadow: 0 0 15px rgba(72, 202, 228, 0.4);
+        }
+        .action-btn:hover { background: #fff; box-shadow: 0 0 20px #fff; transform: translateY(-3px); }
 
     </style>
 </head>
 <body>
 
-    <!-- 頂部導覽列 (可以連回你的首頁) -->
+    <!-- 頂部導覽列 (點擊返回首頁 index.html) -->
     <nav>
         <a href="index.html" class="back-btn">← Back to Audio Lab</a>
     </nav>
@@ -193,7 +115,6 @@
     <!-- 文章區塊 -->
     <main class="article-container">
         
-        <!-- 文章標題與資訊 -->
         <header class="post-header">
             <div class="tags">
                 <span class="tag">模組一</span>
@@ -204,17 +125,23 @@
             <div class="meta">By Sound Designer • Updated on Oct 2024</div>
         </header>
 
-        <!-- 文章內文 -->
+        <!-- ================= 開始編輯你的文章 ================= -->
         <article class="post-content">
             
             <p>這是所有做電腦音樂的人必備的常識，也是各大面試、包含北藝大 MIT 最常被當作基本題考的觀念。在了解數位音樂如何運作之前，我們必須先搞懂電腦是如何「聽見」並「記錄」聲音的。</p>
 
+            <!-- 這是中標題 -->
             <h2>聲音的數位化：快門的瞬間</h2>
+            
+            <!-- 這是段落文字，裡面有標示重點的顏色語法 -->
             <p>聲音在現實世界中是一種連續的實體聲波，但電腦只能理解 <span class="hl-blue marker">0 與 1</span> 的數位訊號。因此，我們必須把連續的聲波「切斷」成一個個極小的點，這個動作就叫做<strong>取樣（Sampling）</strong>。</p>
 
-            <p><span class="hl">Sample Rate（取樣率）</span>的意思就是：<strong>聲音在數位化時，每秒鐘擷取多少次樣本。</strong>你可以把它想像成相機的「連拍速度」或影片的「幀數（FPS）」。一秒鐘內拍的張數越多，動態就越平滑；同樣的，一秒鐘內擷取的聲音樣本越多，能還原的高頻細節就越精確。</p>
+            <!-- 👉【教學：如何插入圖片】 -->
+            <!-- 把 src=" 後面的網址換成你的圖片網址。如果你圖片存在電腦裡的 img 資料夾，就改成 src="img/你的圖片.jpg" -->
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="DAW 介面與錄音器材" class="post-image">
+            <div class="image-caption">↑ 這是一張圖片的說明：在開啟新專案時，第一步就是確認 Sample Rate。</div>
 
-            <!-- 提示框/重點框 -->
+            <!-- 這是提示框/重點框 -->
             <blockquote>
                 <p>💡 <strong>奈奎斯特定理（Nyquist Theorem）：</strong><br>
                 取樣率必須要是「人類能聽到的最高頻率（20,000 Hz）」的至少兩倍，才能完整重現這個聲音。這就是為什麼最基本的取樣率通常會落在 40 kHz 以上。</p>
@@ -223,21 +150,35 @@
             <h2>業界標準：44.1 kHz 與 48 kHz</h2>
             <p>在實際的軟體操作（如 Ableton Live, Logic Pro）或錄音介面設定中，你最常看到下面這兩個數字，請務必把它們死死記住：</p>
 
+            <!-- 這是小標題 -->
             <h3>1. 音樂/CD 標準：44.1 kHz</h3>
             <p>當年 Sony 與 Philips 在制定 CD 規格時，將取樣率定在了 <span class="hl">44,100 Hz (44.1 kHz)</span>。這意味著一秒鐘的音樂，電腦會切出四萬四千一百個點來記錄。直到今天，這仍然是純音樂發行、Spotify 等串流平台最常見的標準。</p>
 
             <h3>2. 影像/電影工業標準：48 kHz</h3>
-            <p>如果你今天做的音樂是要<strong>配上畫面的（如電影配樂、遊戲音效、YouTube 影片）</strong>，那麼你的 DAW（數位音樂工作站）專案設定請務必改成 <span class="hl-blue">48,000 Hz (48 kHz)</span>。因為影片的幀率（如 24fps 或 30fps）在數學運算上與 48 kHz 更容易同步，能避免影音不同步（Out of sync）的問題發生。</p>
+            <p>如果你今天做的音樂是要<strong>配上畫面的（如電影配樂、遊戲音效、YouTube 影片）</strong>，那麼你的 DAW（數位音樂工作站）專案設定請務必改成 <span class="hl-blue">48,000 Hz (48 kHz)</span>。因為影片的幀率在數學運算上與 48 kHz 更容易同步，能避免影音不同步的問題。</p>
 
-            <!-- 插入文章內圖 -->
-            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="DAW 介面與錄音器材" class="post-image">
-            <div class="image-caption">在開啟新專案或設定錄音介面時，第一步就是確認 Sample Rate。</div>
+            <!-- 👉【教學：如何插入 YouTube 影片】 -->
+            <h2>實際聽聽看差異</h2>
+            <p>你可以直接在下方播放這段示範影片，聽聽看不同取樣率對高頻細節的影響：</p>
+            
+            <div class="video-container">
+                <!-- 把 src=" 後面的網址換成 YouTube 的「嵌入」網址即可！ -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <!-- 👉【教學：如何插入工具/下載按鈕】 -->
+            <h2>實用工具下載</h2>
+            <p>我做了一個好用的 Sample Rate 換算表，你可以點擊下方按鈕下載或前往工具頁面：</p>
+            
+            <!-- 把 href=" 後面的 # 換成你想連結的網址或檔案路徑 -->
+            <a href="#" class="action-btn">📥 下載 Sample Rate 備忘錄 (PDF)</a>
 
             <h2>面試常考觀念總結</h2>
             <p>如果你被教授問到：「做一首純發行的單曲，跟做一部微電影的配樂，你在開專案時第一步會有什麼不同？」</p>
             <p>千萬別只回答選用的樂器不同，你可以非常專業地告訴他們：<strong>「我會先確認 Sample Rate 的設定，純音樂我會設定在 44.1 kHz，而影像配樂我會設定在 48 kHz，以符合影視工業的標準同步規格。」</strong>這句話一出來，基本功的分數就穩拿了。</p>
 
         </article>
+        <!-- ================= 結束編輯你的文章 ================= -->
 
     </main>
 
